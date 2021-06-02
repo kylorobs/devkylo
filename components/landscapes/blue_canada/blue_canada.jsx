@@ -1,38 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 // import gsap from "gsap";
 import { fadeUp } from '../../../animations/fadeUp';
 import Blue from '../../../assets/blue.svg';
 import Image from 'next/image';
+import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
 
-const FullScreen = styled.section`
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    background-color: #979797;
-    overflow: hidden;
-`
-
-
-const Layer = styled.div`
-    position: absolute;
-    max-height: 100%;
-    width: ${props => props.width || '100%'};
-    bottom: ${props => props.bottom || ''};
-    top: ${props => props.top || ''};
-    left: ${props => props.left || ''};
-    right: ${props => props.right || ''};
-    z-index: ${props => props.zIndex || ''};
-    transform: ${props => !props.center ? '' : 'translate(-50%, -50%)'};
-`
-
-const SVGBase = styled.div`
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    z-index: 10;
-    background-color: #979797;
-`
 
 
 const BlueCanada = props => {
@@ -56,7 +28,7 @@ const BlueCanada = props => {
             <Layer width="auto" top="50%" left="50%" w zIndex="100" center>
                 {props.children}
             </Layer>
-            <SVGBase>
+            <SVGBase bg="#979797">
                 <Layer bottom="0" zIndex="-10"  ref={(el) => (mountainsEl = el)}>
                     <Image src="/mountains.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
                 </Layer>

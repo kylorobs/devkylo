@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image';
 import BlueCanada from '../components/landscapes/blue_canada/blue_canada';
+import MagicalLake from '../components/landscapes/lake/lake';
 import SectionHeading from '../components/UI/sectionHeading';
 import ICreate from '../content/icreate';
 
@@ -22,7 +23,7 @@ export default function Home() {
           <p>sdsdwdwdwd</p>
         </BlueCanada>
         <ICreate />
-        <BlueCanada></BlueCanada>
+        <MagicalLake />
         <SectionHeading heading="I.SOLVE()" right>
           <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
         </SectionHeading>
