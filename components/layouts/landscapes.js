@@ -5,6 +5,7 @@ export const FullScreen = styled.section`
     width: 100%;
     position: relative;
     overflow: hidden;
+    background-color: blue;
 `
 
 

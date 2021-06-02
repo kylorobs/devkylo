@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image';
 import BlueCanada from '../components/landscapes/blue_canada/blue_canada';
 import MagicalLake from '../components/landscapes/lake/lake';
+import RicketyBridge from '../components/landscapes/bridge/bridge';
 import SectionHeading from '../components/UI/sectionHeading';
 import ICreate from '../content/icreate';
-
+import PlaceHolder from '../content/placeholders';
 
 export default function Home() {
   return (
@@ -23,11 +24,14 @@ export default function Home() {
           <p>sdsdwdwdwd</p>
         </BlueCanada>
         <ICreate />
-        <MagicalLake />
+
+        <MagicalLake>
+          <PlaceHolder />
+        </MagicalLake>
         <SectionHeading heading="I.SOLVE()" right>
           <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
         </SectionHeading>
-        <BlueCanada></BlueCanada>
+        <RicketyBridge />
         <SectionHeading heading="I.COACH()" >
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
         </SectionHeading>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 // import gsap from "gsap";
 import { fadeUp } from '../../../animations/fadeUp';
 import Lake from '../../../assets/yacht.svg';
+import Mountains from '../../../assets/lakemountains.svg';
 import Image from 'next/image';
 import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
 import styled from 'styled-components';
@@ -51,8 +52,9 @@ const MagicalLake = props => {
             <Layer width="8%" zIndex="400" left="50%" center bottom="10%">
                 <Image src="/floatyacht.png" alt="Vercel Logo" width="86" height="152" layout="responsive" />
             </Layer>
-            <Layer width="70%" zIndex="-10" left="50%" center bottom="26%">
-                <Image src="/lakemountains.png" alt="Vercel Logo" width="721" height="87" layout="responsive" />
+            <Layer width="90%" zIndex="-10" left="50%" center bottom="23%">
+                {/* <Image src="/lakemountains.png" alt="Vercel Logo" width="721" height="87" layout="responsive" /> */}
+                <Mountains />
             </Layer>
             <Layer width="30%" zIndex="200" left="60%" center bottom="0%" ref={(el) => (ripplesEl = el)}>
                 <Image src="/ripples.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
