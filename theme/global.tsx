@@ -67,6 +67,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${props => props.theme.fonts.secondary}
     }
     a {
-        color: red;
+        color: ${({ theme }) => theme.colors.secondary};
+        text-decoration: underline;
+        &:hover {
+            color: ${({ theme }) => theme.colors.primary};
+            cursor: pointer;
+          }
     }
 `

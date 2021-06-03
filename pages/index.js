@@ -1,13 +1,49 @@
+
 import Head from 'next/head'
-import Image from 'next/image';
 import BlueCanada from '../components/landscapes/blue_canada/blue_canada';
 import MagicalLake from '../components/landscapes/lake/lake';
 import RicketyBridge from '../components/landscapes/bridge/bridge';
 import SectionHeading from '../components/UI/sectionHeading';
+import Footer from '../components/UI/footer';
 import ICreate from '../content/icreate';
 import PlaceHolder from '../content/placeholders';
+import ProbSols from '../content/probsols';
+import styled from 'styled-components';
+import MenuBurger from '../components/UI/menu_burger';
+
+const Heading=styled.h1`
+  font-size: 5rem;
+  margin: 0;
+  padding:0;
+  margin-bottom: 8rem;
+  
+
+  @media (min-width: 350px){
+    font-size: 6rem;
+  }
+  @media (min-width: 600px){
+    font-size: 10rem;
+  }
+`
+
+const HeaddingInner=styled.span`
+  display: inline;
+  font-size: 3rem;
+  float: right;
+  margin-top: 2rem;
+  background-color: black;
+  text-align: right;
+  color: #70ffbf;
+  padding: 1rem;
+ 
+  @media (min-width: 650px){
+    font-size: 6rem;
+  }
+`
+
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -17,31 +53,31 @@ export default function Home() {
       </Head>
 
       <main>
+        <MenuBurger />
         <BlueCanada>
-          <h1>
-            KYLO ROBINSON - Fullstack Javascript Developer
-          </h1>
-          <p>sdsdwdwdwd</p>
+          <Heading>
+            KYLO ROBINSON <HeaddingInner>Fullstack Javascript Developer</HeaddingInner>
+          </Heading>
+
         </BlueCanada>
         <ICreate />
 
         <MagicalLake>
-          <PlaceHolder />
+            <PlaceHolder />
         </MagicalLake>
         <SectionHeading heading="I.SOLVE()" right>
           <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
         </SectionHeading>
-        <RicketyBridge />
+        <RicketyBridge>
+          <ProbSols />
+        </RicketyBridge>
         <SectionHeading heading="I.COACH()" >
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
         </SectionHeading>
+        <PlaceHolder />
       </main>
 
-      <footer>
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-      </footer>
+      <Footer />
     </>
   )
 }
@@ -55,3 +91,42 @@ export default function Home() {
 // https://css-tricks.com/how-to-do-knockout-text/
 // https://codepen.io/Jintos/full/crlxk
 // https://dev.to/dolearning/importing-svgs-to-next-js-nna
+
+
+// const Heading=styled.h1`
+//   font-size: 5rem;
+//   margin: 0;
+//   padding:0;
+//   margin-bottom: 8rem;
+  
+
+//   @media (min-width: 350px){
+//     font-size: 6rem;
+//   }
+//   @media (min-width: 600px){
+//     font-size: 10rem;
+//   }
+// `
+
+// const Flex = styled.div`
+//   width: 100%;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+// `
+
+// const Block = styled.div`
+//   background-color: black;
+//   width: 40rem;
+// `
+// const HeaddingInner=styled.h2`
+//   display: block;
+//   font-size: 3rem;
+//   padding:0;
+//   text-align: right;
+//   color: #70ffbf;
+//   width: auto;
+//   @media (min-width: 600px){
+//     font-size: 6rem;
+//   }
+// `

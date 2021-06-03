@@ -9,9 +9,10 @@ const Paper = styled.div`
     max-height: 35rem;
     width: auto;
     min-width: 20rem;
-    margin: 1.5rem;
-    box-shadow: 6px 5px 5px 2px rgb(0 0 0 / 15%);
-    background: #ffffff82;
+    margin: 1.5rem auto;
+    box-shadow: 6px 5px 5px 2px rgb(0 0 0 / 45%);
+    // background: #ffffff82;
+    background: #ffffffcf;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,11 +20,12 @@ const Paper = styled.div`
     padding: 1rem;
     color: black;
     text-decoration: none;
-
+    overflow: hidden;
 
     @media (min-width: 600px){
         height: 80%;
-        width: 30rem;
+        width: 70%;
+        max-width: 30rem;
         max-height: 60rem;
         min-height: 35rem;
 
@@ -39,10 +41,30 @@ const Title = styled.span`
     color: black;
     text-decoration: none;
 `
+const ProbSol_Heading = styled.span`
+    display: block;
+    font-family: ${props => props.theme.fonts.primary}
+    font-size: 3rem;
+    text-align: center;
+    padding: 0 2rem;
+    color: black;
+    text-decoration: none;
+`
+const ProbSol_Text = styled.p`
+    display: block;
+    font-family: ${props => props.theme.fonts.paragraph};
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 0 2rem;
+    color: black;
+    text-decoration: none;
+`
+
 
 const Desc = styled.p`
-    font-family: ${props => props.theme.fonts.secondary};
-    font-size: 22px;
+    font-family: ${props => props.theme.fonts.paragraph};
+    font-size: 1.7rem;
+    text-align: center;
     margin: 2em;
     color: black;
     text-decoration: none;
@@ -53,7 +75,13 @@ const Flex = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem;
+    padding: 2rem 0;
+    // background: #ffffffbf;
+    overflow: hidden;
+
+    @media (min-width: 600px){
+        padding: 2rem;
+    }
 `
 
 const ALink = styled.a`
@@ -75,7 +103,25 @@ const Card = props => {
         ))
     }
 
-    return (
+    if (props.solution){
+        return (
+            <Link href={props.link || '/'}>
+                <ALink>
+                    <Paper>
+                        <ProbSol_Heading>Problem</ProbSol_Heading>
+                        <ProbSol_Text>{props.problem}</ProbSol_Text>
+                        <ProbSol_Heading>Solution</ProbSol_Heading>
+                        <ProbSol_Text>{props.solution}</ProbSol_Text>
+                        <Flex>
+                            {chips}
+                        </Flex>
+                    </Paper>
+                </ALink>
+            </Link>
+        )
+    }
+
+    else return (
         <Link href={props.link || '/'}>
             <ALink>
                 <Paper>

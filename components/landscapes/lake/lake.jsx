@@ -38,7 +38,7 @@ const MagicalLake = props => {
 
     return (
         <FullScreen>
-            <Layer width="auto" top="50%" left="50%" w zIndex="100" center>
+            <Layer width="100%" top="50%" left="50%" w zIndex="300" center>
                 {props.children}
             </Layer>
           

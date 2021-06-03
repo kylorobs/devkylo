@@ -28,7 +28,7 @@ const BlueCanada = props => {
             <Layer width="auto" top="50%" left="50%" w zIndex="100" center>
                 {props.children}
             </Layer>
-            <SVGBase bg="#979797">
+            <SVGBase bg="#60d8a2">
                 <Layer bottom="0" zIndex="-10"  ref={(el) => (mountainsEl = el)}>
                     <Image src="/mountains.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
                 </Layer>

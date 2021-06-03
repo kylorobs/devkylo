@@ -34,7 +34,7 @@ const Container = styled.div`
     margin: auto;
 `
 
-class PlaceHolder extends React.Component {
+class ProbSols extends React.Component {
     static getInitialProps({ req }) {
         let userAgent;
         let deviceType;
@@ -64,35 +64,26 @@ render(){
             deviceType={this.props.deviceType}
         >
             <Card 
-                title="New Home Page Design"
-                desc="A new improved page for KCLSU"
+                problem="Staff struggle to work with large chunks of html"
+                solution="Create a component library"
                 chips={['Node Js', 'Javascript', 'React', 'Firebase']}
             ></Card>
             <Card 
-                title="Advice Pro Integration"
-                desc="Integrating the Adice pro API"
+                problem="Advice staff have to manually log database"
+                solution="Integrating the Adice pro API"
                 chips={['Node Js', 'Javascript', 'React', 'Firebase']}
             ></Card>
             <Card 
-                title="Building a Component Library"
-                desc="Designing a cusatom library"
+                problem="Lost form entires"
+                solution="Create a logging system that captures all entries."
                 chips={['Node Js', 'Javascript', 'React', 'Firebase']}
             ></Card>
             <Card 
-                title="New Home Page Design"
-                desc="A new improved page for KCLSU"
+                problem="Recreating the same design over and over"
+                solution="Build a flexible template"
                 chips={['Node Js', 'Javascript', 'React', 'Firebase']}
             ></Card>
-            <Card 
-                title="New Home Page Design"
-                desc="A new improved page for KCLSU"
-                chips={['Node Js', 'Javascript', 'React', 'Firebase']}
-            ></Card>
-            <Card 
-                title="New Home Page Design"
-                desc="A new improved page for KCLSU"
-                chips={['Node Js', 'Javascript', 'React', 'Firebase']}
-            ></Card>
+
         </Carousel>
         </Container>
        
@@ -100,4 +91,4 @@ render(){
 }
 } 
 
-export default PlaceHolder;
+export default ProbSols;
