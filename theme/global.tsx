@@ -64,10 +64,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 2rem;
     }
     p, a {
-        font-family: ${props => props.theme.fonts.secondary}
+        font-family: ${props => props.theme.fonts.paragraph}
     }
     a {
-        color: ${({ theme }) => theme.colors.secondary};
+        color: navy;
         text-decoration: underline;
         &:hover {
             color: ${({ theme }) => theme.colors.primary};

@@ -21,6 +21,11 @@ const Paper = styled.div`
     color: black;
     text-decoration: none;
     overflow: hidden;
+    transition: box-shadow 0.3s ease-in;
+
+    &:hover {
+        box-shadow: 6px 5px 5px 2px rgb(112 255 191);
+    }
 
     @media (min-width: 600px){
         height: 80%;
@@ -96,6 +101,7 @@ const ALink = styled.a`
 
 const Card = props => {
 
+
     let chips = null;
     if (props.chips){
         chips = props.chips.map((chip, i)=> {
@@ -106,7 +112,7 @@ const Card = props => {
 
     if (props.solution){
         return (
-            <Link href={props.link || '/'}>
+            <Link href={props.link || '/'} as={`/${props.link}` || '/'}>
                 <ALink>
                     <Paper>
                         <ProbSol_Heading>Problem</ProbSol_Heading>
@@ -123,7 +129,7 @@ const Card = props => {
     }
 
     else return (
-        <Link href={props.link || '/'}>
+        <Link href={props.link || '/'} as={`/${props.link}` || '/'}>
             <ALink>
                 <Paper>
                     <Title>{props.title}</Title>

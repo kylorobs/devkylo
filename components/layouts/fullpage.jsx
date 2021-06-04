@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../UI/footer';
 import MenuBurger from '../UI/menu_burger';
 import Head from 'next/head'
+import HomeButton from 'components/UI/home_button';
 
 const FullPage = (props) => {
     return (
@@ -12,6 +13,7 @@ const FullPage = (props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <HomeButton />
                 <MenuBurger />
                 {props.children}
             </main>

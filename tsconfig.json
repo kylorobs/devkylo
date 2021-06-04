@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_document.js", "lib/prismic.js", "pages/index.js", "content/posts.jsx"  ],
+, "pages/_document.js", "lib/prismic.js", "pages/index.js", "content/posts.jsx", "components/UI/home_button.jsx"  ],
   "exclude": [
     "node_modules"
   ]

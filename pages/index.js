@@ -4,7 +4,7 @@ import MagicalLake from '../components/landscapes/lake/lake';
 import RicketyBridge from '../components/landscapes/bridge/bridge';
 import SectionHeading from '../components/UI/sectionHeading';
 import ICreate from '../content/icreate';
-import PlaceHolder from '../content/placeholders';
+import Students from '../content/students';
 import Posts from '../content/posts';
 import ProbSols from '../content/probsols';
 import FullPage from '../components/layouts/fullpage';
@@ -73,7 +73,7 @@ export default function Home(props) {
         <SectionHeading heading="I.COACH()" >
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
         </SectionHeading>
-        <PlaceHolder />
+        <Students students={props.students.results}/>
     </FullPage>
   )
 }
@@ -83,9 +83,15 @@ export async function getStaticProps() {
     Prismic.Predicates.at("document.type", "post"),
     { orderings: "[my.post.published desc]" }
   )
+  const students = await PrismicClient.query(
+    Prismic.Predicates.at("document.type", "student"),
+    { orderings: "[my.post.published desc]" }
+  )
+
   return {
     props: {
-      posts
+      posts,
+      students
     },
   }
 }
@@ -100,40 +106,3 @@ export async function getStaticProps() {
 // https://dev.to/dolearning/importing-svgs-to-next-js-nna
 
 
-// const Heading=styled.h1`
-//   font-size: 5rem;
-//   margin: 0;
-//   padding:0;
-//   margin-bottom: 8rem;
-  
-
-//   @media (min-width: 350px){
-//     font-size: 6rem;
-//   }
-//   @media (min-width: 600px){
-//     font-size: 10rem;
-//   }
-// `
-
-// const Flex = styled.div`
-//   width: 100%;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-// `
-
-// const Block = styled.div`
-//   background-color: black;
-//   width: 40rem;
-// `
-// const HeaddingInner=styled.h2`
-//   display: block;
-//   font-size: 3rem;
-//   padding:0;
-//   text-align: right;
-//   color: #70ffbf;
-//   width: auto;
-//   @media (min-width: 600px){
-//     font-size: 6rem;
-//   }
-// `

@@ -24,7 +24,8 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 3rem;
+    font-family: ${props => props.theme.fonts.secondary};
+    font-size: 2.5rem;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: bold;

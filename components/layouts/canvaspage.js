@@ -9,7 +9,7 @@ const Bg = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 8rem;
+    padding-top: 10rem;
     padding-bottom: 4rem;
 `
 
