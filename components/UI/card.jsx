@@ -17,7 +17,7 @@ const Paper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
-    padding: 1rem;
+    padding: 2rem;
     color: black;
     text-decoration: none;
     overflow: hidden;
@@ -98,9 +98,10 @@ const Card = props => {
 
     let chips = null;
     if (props.chips){
-        chips = props.chips.map(chip => (
-            <Chip small>{chip}</Chip>
-        ))
+        chips = props.chips.map((chip, i)=> {
+            if (i >= 6) return;
+            else return <Chip small>{chip}</Chip>
+        })
     }
 
     if (props.solution){

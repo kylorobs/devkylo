@@ -5,9 +5,12 @@ import RicketyBridge from '../components/landscapes/bridge/bridge';
 import SectionHeading from '../components/UI/sectionHeading';
 import ICreate from '../content/icreate';
 import PlaceHolder from '../content/placeholders';
+import Posts from '../content/posts';
 import ProbSols from '../content/probsols';
 import FullPage from '../components/layouts/fullpage';
 import styled from 'styled-components';
+import { PrismicClient } from "../lib/prismic";
+import Prismic from "prismic-javascript";
 
 const Heading=styled.h1`
   font-size: 5rem;
@@ -40,7 +43,10 @@ const HeaddingInner=styled.span`
 `
 
 
-export default function Home() {
+export default function Home(props) {
+
+  console.log('HOME Props');
+  console.log(props)
 
   return (
     <FullPage 
@@ -56,7 +62,7 @@ export default function Home() {
         <ICreate />
 
         <MagicalLake>
-            <PlaceHolder />
+            <Posts posts={props.posts.results}/>
         </MagicalLake>
         <SectionHeading heading="I.SOLVE()" right>
           <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
@@ -72,6 +78,17 @@ export default function Home() {
   )
 }
 
+export async function getStaticProps() {
+  const posts = await PrismicClient.query(
+    Prismic.Predicates.at("document.type", "post"),
+    { orderings: "[my.post.published desc]" }
+  )
+  return {
+    props: {
+      posts
+    },
+  }
+}
 
 
 // https://dev.to/ruben_suet/set-up-nextjs-9-4-with-prismic-as-headless-cms-27ij
