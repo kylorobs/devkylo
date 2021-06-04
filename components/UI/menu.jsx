@@ -77,8 +77,8 @@ const Menu = ({ open }) => {
           People coached
         </a>
       </Link>
-      <p>Follow me on Twitter - <a>@kylorobs</a></p>
-      <p>Email me at <a>kylo@thegreatsync.com</a></p>
+      <p>Follow me on Twitter - <a href="https://twitter.com/kylorobs">@kylorobs</a></p>
+      <p>Email me at <a href="mailto:kylo@thegreatsync.com">kylo@thegreatsync.com</a></p>
     </StyledMenu>
   )
 }

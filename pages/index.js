@@ -1,15 +1,13 @@
 
-import Head from 'next/head'
 import BlueCanada from '../components/landscapes/blue_canada/blue_canada';
 import MagicalLake from '../components/landscapes/lake/lake';
 import RicketyBridge from '../components/landscapes/bridge/bridge';
 import SectionHeading from '../components/UI/sectionHeading';
-import Footer from '../components/UI/footer';
 import ICreate from '../content/icreate';
 import PlaceHolder from '../content/placeholders';
 import ProbSols from '../content/probsols';
+import FullPage from '../components/layouts/fullpage';
 import styled from 'styled-components';
-import MenuBurger from '../components/UI/menu_burger';
 
 const Heading=styled.h1`
   font-size: 5rem;
@@ -45,15 +43,10 @@ const HeaddingInner=styled.span`
 export default function Home() {
 
   return (
-    <>
-      <Head>
-        <title>Kylo Robinson - Fullstack Javascript Developer</title>
-        <meta name="description" content="A portfolio of work for Kylo Robinson, a fullstack javascript developer" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <MenuBurger />
+    <FullPage 
+      pagetitle=" Kylo Robinson - Fullstack Javascript Developer" 
+      pagedesc="A portfolio of work as a javascript developer, building React and Node Js applications.">
+        
         <BlueCanada>
           <Heading>
             KYLO ROBINSON <HeaddingInner>Fullstack Javascript Developer</HeaddingInner>
@@ -75,10 +68,7 @@ export default function Home() {
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
         </SectionHeading>
         <PlaceHolder />
-      </main>
-
-      <Footer />
-    </>
+    </FullPage>
   )
 }
 
