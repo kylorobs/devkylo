@@ -45,8 +45,8 @@ const HeaddingInner=styled.span`
 
 export default function Home(props) {
 
-  console.log('HOME Props');
-  console.log(props)
+  // console.log('HOME Props');
+  // console.log(props)
 
   return (
     <FullPage 

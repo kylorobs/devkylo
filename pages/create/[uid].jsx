@@ -51,12 +51,8 @@ const CreatePage = ({ data }) => {
             pagedesc={data.short_desc[0].text}
         >
             <Flex>
-                <Chip>Javascript</Chip>
-                <Chip>CSS Grid</Chip>
-                <Chip>Firebase</Chip>
-                <Chip>Github</Chip>
-                <Chip>CSS Transitions</Chip>
-                </Flex>
+
+            </Flex>
             <Text>
                 <h2>Task</h2>
                 <p>{data.task[0].text}</p>

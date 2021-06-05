@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 // import gsap from "gsap";
-import { fadeUp } from '../../../animations/fadeUp';
 import Lake from '../../../assets/yacht.svg';
 import Mountains from '../../../assets/lakemountains.svg';
 import Image from 'next/image';
 import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
 import styled from 'styled-components';
-
+import gsap from 'gsap';
+import { fadeUp, scaleIn, fadeIn, setFadeUp, slideUp, rotateFadeUp, slideRight } from '../../../animations/fadeUp';
 
 const Ocean = styled.div`
     width: 100%;
@@ -24,36 +24,36 @@ const MagicalLake = props => {
 
     let mountainsEl = useRef(null);
     let ripplesEl = useRef(null);
-    // let backtreesEl = useRef(null);
-    // let moonEl = useRef(null);
+    let plantsEl = useRef(null);
+    let yachtEl = useRef(null);
+    let contentEl = useRef(null);
 
     useEffect(() => {
-        // const tl = gsap.timeline();
-        // tl.add(fadeUp(mountainsEl));
-        // tl.add(fadeUp(fronttreesEl));
-        // tl.add(fadeUp(backtreesEl));
-        // tl.add(fadeUp(rocksEl));
+        const tl = gsap.timeline();
+        tl.add(scaleIn(plantsEl));
+        tl.add(fadeIn(yachtEl));
+        tl.add(fadeUp(mountainsEl), '-=0.5');
+        tl.add(slideRight(contentEl), '-=0.2');
 
     }, [fadeUp])
 
     return (
         <FullScreen>
-            <Layer width="100%" top="50%" left="50%" w zIndex="300" center>
-                {props.children}
+
+            <Layer width="100%" top="50%" left="50%"  zIndex="300" center>
+                <div ref={(el) => (contentEl = el)}>
+                    {props.children}
+                </div>
             </Layer>
-          
-            
-            {/* <Image src="/lake.png" alt="Vercel Logo" width="721" height="505" layout="responsive" ></Image> */}
         
         <SVGBase bg="#9bb1ff">
-            <Layer width="100%" zIndex="-10" left="0%" top="0%" ref={(el) => (mountainsEl = el)}>
+            <Layer width="100%" zIndex="-10" left="0%" top="0%">
                 <Image src="/lakecloud.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
             </Layer>
-            <Layer width="8%" zIndex="400" left="50%" center bottom="10%">
+            <Layer  ref={(el) => (yachtEl = el)} width="8%" zIndex="400" left="50%" center bottom="10%">
                 <Image src="/floatyacht.png" alt="Vercel Logo" width="86" height="152" layout="responsive" />
             </Layer>
-            <Layer width="90%" zIndex="-10" left="50%" center bottom="23%">
-                {/* <Image src="/lakemountains.png" alt="Vercel Logo" width="721" height="87" layout="responsive" /> */}
+            <Layer ref={(el) => (mountainsEl = el)}  width="90%" zIndex="-10" left="50%" center bottom="23%">
                 <Mountains />
             </Layer>
             <Layer width="30%" zIndex="200" left="60%" center bottom="0%" ref={(el) => (ripplesEl = el)}>
@@ -62,7 +62,10 @@ const MagicalLake = props => {
             <Layer width="100%" bottom="5%" zIndex="-10">
                 <Ocean />
             </Layer>
-            <Lake/>
+            <div ref={(el) => (plantsEl = el)}>
+                <Lake/>
+            </div>
+
         </SVGBase>
         </FullScreen>
     )
