@@ -13,7 +13,7 @@ const Flex = styled.div`
 `
 
 const StyledSection = styled.section`
-    width: 100%;
+    width: auto;
     min-height: 20rem;
     padding: 0em;
 
@@ -39,7 +39,7 @@ const StyledSection = styled.section`
 
         @media (min-width: 600px){
             font-size: 10rem;
-            margin: 6rem;
+            margin: 6rem 0;
             text-align: ${props => props.right? 'right' : 'left'};
         }
 

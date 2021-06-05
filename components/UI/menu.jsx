@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import ProfileImage from './profile_image';
+import HomeButton from './home_button';
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -59,6 +60,7 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
+      <HomeButton />
       <ProfileImage />
       <Link href="/created">
         <a>

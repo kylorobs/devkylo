@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Chip from './chip';
+import TechList from '../../content/techlist';
 import Link from 'next/link';
 
 const Paper = styled.div`
@@ -75,19 +75,6 @@ const Desc = styled.p`
     text-decoration: none;
 `
 
-const Flex = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem 0;
-    // background: #ffffffbf;
-    overflow: hidden;
-
-    @media (min-width: 600px){
-        padding: 2rem;
-    }
-`
 
 const ALink = styled.a`
     color: black;
@@ -101,15 +88,6 @@ const ALink = styled.a`
 
 const Card = props => {
 
-
-    let chips = null;
-    if (props.chips){
-        chips = props.chips.map((chip, i)=> {
-            if (i >= 6) return;
-            else return <Chip small>{chip}</Chip>
-        })
-    }
-
     if (props.solution){
         return (
             <Link href={props.link || '/'} as={`/${props.link}` || '/'}>
@@ -119,9 +97,7 @@ const Card = props => {
                         <ProbSol_Text>{props.problem}</ProbSol_Text>
                         <ProbSol_Heading>Solution</ProbSol_Heading>
                         <ProbSol_Text>{props.solution}</ProbSol_Text>
-                        <Flex>
-                            {chips}
-                        </Flex>
+                        <TechList limit={4} small list={props.chips} />
                     </Paper>
                 </ALink>
             </Link>
@@ -134,9 +110,7 @@ const Card = props => {
                 <Paper>
                     <Title>{props.title}</Title>
                     <Desc>{props.desc}</Desc>
-                    <Flex>
-                        {chips}
-                    </Flex>
+                    <TechList small limit={5} list={props.chips} />
                 </Paper>
             </ALink>
         </Link>

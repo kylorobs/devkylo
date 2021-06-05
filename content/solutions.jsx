@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import CardCarousel from 'components/UI/carousel';
 
 
-const Students = (props) => {
+const Solutions = (props) => {
 
 
   const createTechList = (ar) => {
@@ -13,27 +13,27 @@ const Students = (props) => {
   }
 
   const renderCards = () => {
-    if (!props.students || props.students.length === 0) return [];
-    return props.students.map(result => {
+    if (!props.solutions || props.solutions.length === 0) return [];
+    return props.solutions.map(result => {
       return (
         <Card
           key={result.id} 
-          title={result.data.name[0].text}
-          desc={result.data.comment[0].text}
-          link={'create/'}
+          problem={result.data.problem[0].text}
+          solution={result.data.solution[0].text}
+          link={'solve/' + result.uid}
           chips={createTechList(result.data.technology)}
         ></Card>
       )
     })  
   }    
 
-    let students = renderCards();
+    let solutions = renderCards();
   
     return (
         <CardCarousel>
-            { students }
+            { solutions }
         </CardCarousel>
     )
 } 
 
-export default Students;
+export default Solutions;

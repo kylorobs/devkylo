@@ -6,7 +6,7 @@ import SectionHeading from '../components/UI/sectionHeading';
 import ICreate from '../content/icreate';
 import Students from '../content/students';
 import Posts from '../content/posts';
-import ProbSols from '../content/probsols';
+import Solutions from '../content/solutions';
 import FullPage from '../components/layouts/fullpage';
 import styled from 'styled-components';
 import { PrismicClient } from "../lib/prismic";
@@ -23,22 +23,22 @@ const Heading=styled.h1`
     font-size: 6rem;
   }
   @media (min-width: 600px){
-    font-size: 10rem;
+    font-size: 11rem;
   }
 `
 
 const HeaddingInner=styled.span`
   display: inline;
   font-size: 3rem;
-  float: right;
-  margin-top: 2rem;
+  float: ${props => props.align};
+  margin-top:0;
   background-color: black;
-  text-align: right;
+  text-align: ${props => props.align};
   color: #70ffbf;
   padding: 1rem;
  
   @media (min-width: 650px){
-    font-size: 6rem;
+    font-size: 5rem;
   }
 `
 
@@ -55,7 +55,7 @@ export default function Home(props) {
         
         <BlueCanada>
           <Heading>
-            KYLO ROBINSON <HeaddingInner>Fullstack Javascript Developer</HeaddingInner>
+            DEV KYLO <HeaddingInner align="left">Kyle Robinson -  </HeaddingInner><HeaddingInner align="right">Fullstack Javascript Developer</HeaddingInner>
           </Heading>
 
         </BlueCanada>
@@ -68,7 +68,7 @@ export default function Home(props) {
           <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
         </SectionHeading>
         <RicketyBridge>
-          <ProbSols />
+          <Solutions solutions={props.solutions.results} />
         </RicketyBridge>
         <SectionHeading heading="I.COACH()" >
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
@@ -87,11 +87,15 @@ export async function getStaticProps() {
     Prismic.Predicates.at("document.type", "student"),
     { orderings: "[my.post.published desc]" }
   )
-
+  const solutions = await PrismicClient.query(
+    Prismic.Predicates.at("document.type", "solution"),
+    { orderings: "[my.post.published desc]" }
+  )
   return {
     props: {
       posts,
-      students
+      students,
+      solutions
     },
   }
 }
