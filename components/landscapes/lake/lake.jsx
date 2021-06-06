@@ -6,7 +6,9 @@ import Image from 'next/image';
 import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
 import styled from 'styled-components';
 import gsap from 'gsap';
-import { fadeUp, scaleIn, fadeIn, setFadeUp, slideUp, rotateFadeUp, slideRight } from '../../../animations/fadeUp';
+import { fadeUp, scaleIn, fadeIn, slideRight } from '../../../animations/fadeUp';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Ocean = styled.div`
     width: 100%;
@@ -29,7 +31,12 @@ const MagicalLake = props => {
     let contentEl = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline();
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: plantsEl,
+                start: 'top center',
+              },
+        });
         tl.add(scaleIn(plantsEl));
         tl.add(fadeIn(yachtEl));
         tl.add(fadeUp(mountainsEl), '-=0.5');

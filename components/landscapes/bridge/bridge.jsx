@@ -6,6 +6,8 @@ import gsap from 'gsap';
 import { fadeUp, scaleIn, float, slideRight } from '../../../animations/fadeUp';
 import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
 import styled from 'styled-components';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Sky = styled.div`
@@ -23,7 +25,12 @@ const RicketyBridge = props => {
     let rocksEl = useRef(null);
 
     useEffect(() => {
-         const tl = gsap.timeline();
+         const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: rocksEl,
+                start: 'top center'
+              },
+        });
         tl.add(scaleIn(rocksEl));
         tl.add(fadeUp(moonEl), '-=0.5');
         tl.add(float(balloonEl), '-=2');

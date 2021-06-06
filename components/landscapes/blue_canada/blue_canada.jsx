@@ -17,8 +17,8 @@ const BlueCanada = props => {
     useEffect(() => {
         const tl = gsap.timeline();
         tl.add(slideUp(moonEl),'1');
-        tl.add(fadeUp(mountainsEl), '-=0.8');
-        tl.add(rotateFadeUp(contentEl), '-=0.2');
+        tl.add(rotateFadeUp(contentEl), '-=0.8');
+        tl.add(fadeUp(mountainsEl), '-=3');
 
     }, [])
 
