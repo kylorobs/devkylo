@@ -1,4 +1,3 @@
-import "@fontsource/luckiest-guy";
 import "@fontsource/righteous";
 import "@fontsource/bangers";
 import "@fontsource/lato";
