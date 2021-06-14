@@ -26,7 +26,7 @@ const Block = styled.div`
 `
 
 const Chip = props => (
-    <Block {...props}><span>{props.children}</span></Block>
+    <Block className="chip" {...props}><span>{props.children}</span></Block>
 )
 
 export default Chip;

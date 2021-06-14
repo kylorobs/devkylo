@@ -32,20 +32,21 @@ const MagicalLake = props => {
 
     useEffect(() => {
         const tl = gsap.timeline({
+            delay: 1,
             scrollTrigger: {
                 trigger: plantsEl,
                 start: 'top center',
               },
         });
         tl.add(scaleIn(plantsEl));
-        tl.add(fadeIn(yachtEl));
-        tl.add(fadeUp(mountainsEl), '-=0.5');
-        tl.add(slideRight(contentEl), '-=0.2');
+        tl.add(fadeIn(yachtEl), '-=0.4');
+        tl.add(fadeUp(mountainsEl), '-=0.8');
+        tl.add(slideRight(contentEl), '-=0.5');
 
     }, [fadeUp])
 
     return (
-        <FullScreen>
+        <FullScreen color="#3b516e">
 
             <Layer width="100%" top="50%" left="50%"  zIndex="300" center>
                 <div ref={(el) => (contentEl = el)}>

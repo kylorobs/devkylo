@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 // import gsap from "gsap";
-import { fadeUp, slideUp, rotateFadeUp } from '../../../animations/fadeUp';
+import { fadeUp, slideUp, scaleIn, fadeIn } from '../../../animations/fadeUp';
 import Blue from '../../../assets/blue.svg';
 import Image from 'next/image';
 import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
@@ -10,20 +10,23 @@ import gsap from 'gsap';
 const BlueCanada = props => {
 
     let mountainsEl = useRef(null);
-    let fronttreesEl = useRef(null);
     let moonEl = useRef(null);
+    let foregroundEl = useRef(null);
     let contentEl = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline();
-        tl.add(slideUp(moonEl),'1');
-        tl.add(rotateFadeUp(contentEl), '-=0.8');
-        tl.add(fadeUp(mountainsEl), '-=3');
+        const tl = gsap.timeline({delay: 1});
+        tl.add(fadeIn(foregroundEl));
+        tl.add(scaleIn(foregroundEl),'-=1');
+        tl.add(fadeIn(moonEl),'-=1');
+        tl.add(slideUp(moonEl),'-=1');
+        tl.add(fadeUp(mountainsEl, 2), '-=3');
+        tl.add(fadeIn(contentEl), '-=0.4');
 
     }, [])
 
     return (
-        <FullScreen>
+        <FullScreen color="#86bbe6">
             <Layer width="auto" top="50%" left="50%" zIndex="100" center>
                 <div ref={(el) => (contentEl = el)}>
                     {props.children}
@@ -36,7 +39,9 @@ const BlueCanada = props => {
                 <Layer zIndex="-20" top="60%" left="50%" center width="90%" ref={(el) => (moonEl = el)}>
                     <Image src="/moon.png" alt="Vercel Logo" width="977" height="982" layout="responsive" />
                 </Layer>
-                <Blue />
+                <div ref={(el) => (foregroundEl = el)}>
+                    <Blue />
+                </div>
             </SVGBase>
         </FullScreen>
     )

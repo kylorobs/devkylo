@@ -16,7 +16,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: ${({ open }) => open ? '0' : '1.5rem 0'};
-  z-index: 500;
+  z-index: 2000;
   border-radius: 8rem;
   transition: background 0.3s ease-in;
   &:hover {
@@ -26,11 +26,6 @@ const StyledBurger = styled.button`
     outline: none;
   }
 
-  // @media (max-width: 600px){
-  //   width: 4rem;
-  //   height: 4rem;
-  //   padding: ${({ open }) => open ? '0' : '0.5rem'};;
-  // }
   
   div {
     width: 4rem;

@@ -28,8 +28,10 @@ const Students = (props) => {
   }    
 
     let students = renderCards();
+
+    if (props.listing) return students
   
-    return (
+    else return (
         <CardCarousel>
             { students }
         </CardCarousel>

@@ -1,5 +1,5 @@
 import CanvasPage from "../components/layouts/canvaspage";
-import Posts from '../content/posts';
+import Solutions from '../content/solutions';
 import { PrismicClient } from "../lib/prismic";
 import Prismic from "prismic-javascript";
 import styled from "styled-components";
@@ -15,16 +15,16 @@ const Flex = styled.div`
     }
 `
 
-export default  function Create(props){
+export default function Solve(props){
     return (
         <CanvasPage
-            type="create"
-            pagetitle="Things Built"
+            type="solve"
+            pagetitle="Problems solved"
             pagedesc="Kylo Robinson's portfolio of projects created as a javascript developer."
         >
             <p>Kylo Robinson's portfolio of projects created as a javascript developer.</p>
            <Flex>
-                <Posts listing posts={props.posts.results}/>
+                <Solutions listing solutions={props.solutions.results} />
            </Flex>
 
         </CanvasPage>
@@ -32,13 +32,13 @@ export default  function Create(props){
 }
 
 export async function getStaticProps() {
-    const posts = await PrismicClient.query(
-      Prismic.Predicates.at("document.type", "post"),
+    const solutions = await PrismicClient.query(
+      Prismic.Predicates.at("document.type", "solution"),
       { orderings: "[my.post.published desc]" }
     )
     return {
       props: {
-        posts
+        solutions
       },
     }
   }

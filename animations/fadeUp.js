@@ -2,6 +2,7 @@ import gsap from 'gsap';
 
 export const fadeIn = (el, delay = 0) => {
     const tl = gsap.timeline();
+    tl.set(el, {opacity: 0})
     tl.from(el, {
         opacity: 0,
         duration: 1,
@@ -15,6 +16,7 @@ export const scaleIn = (el, delay = 0) => {
     tl.from(el, {
         scale: 1.5,
         duration: 2,
+        eas:"Power1.easeInOut",
         delay
     });
     return tl;

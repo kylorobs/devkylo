@@ -26,7 +26,9 @@ const Posts = (props) => {
 
     let posts = renderCards();
 
-    return (
+    if (props.listing) return posts
+
+    else return (
         <CardCarousel>
             { posts }
         </CardCarousel>

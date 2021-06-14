@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-
+import AnimateIn  from './animate_in';
 
 const Flex = styled.div`
     display: flex;
@@ -52,7 +52,7 @@ const StyledSection = styled.section`
 
     p {
         font-family: ${props => props.theme.fonts.secondary};
-        font-size: 3.5rem;
+        font-size: 3rem;
         width: 70%;
         text-align: ${props => props.right? 'left' : 'right'};
         margin: 0 1em 1em 1em;
@@ -63,9 +63,13 @@ const StyledSection = styled.section`
         }
         
         @media (min-width: 600px){
-            font-size: 5rem;
+            font-size: 4rem;
             width: 50%;
             margin: 0 2em 1em 2em;
+        }
+
+        @media (min-width: 1250px){
+            font-size: 4.5rem;
         }
     }
 `
@@ -73,10 +77,14 @@ const StyledSection = styled.section`
 const SectionHeading = props => {
     return (
         <StyledSection {...props}>
-            <h2>{props.heading}</h2>
-            <Flex {...props}>
-                {props.children}
-            </Flex>
+            <AnimateIn>
+                <h2>{props.heading}</h2>
+            </AnimateIn>
+            <AnimateIn>
+                <Flex {...props}>
+                    {props.children}
+                </Flex>
+            </AnimateIn>
         </StyledSection>
     )
 }

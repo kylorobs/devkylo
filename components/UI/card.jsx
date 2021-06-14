@@ -11,7 +11,6 @@ const Paper = styled.div`
     min-width: 20rem;
     margin: 1.5rem auto;
     box-shadow: 6px 5px 5px 2px rgb(0 0 0 / 45%);
-    // background: #ffffff82;
     background: #ffffffcf;
     display: flex;
     flex-direction: column;
@@ -29,7 +28,7 @@ const Paper = styled.div`
 
     @media (min-width: 600px){
         height: 80%;
-        width: 70%;
+        width: 90%;
         max-width: 30rem;
         max-height: 60rem;
         min-height: 35rem;

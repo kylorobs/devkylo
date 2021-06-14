@@ -39,7 +39,7 @@ const RicketyBridge = props => {
     }, [])
 
     return (
-        <FullScreen>
+        <FullScreen color="#9bb1ff">
             <Layer width="100%" top="50%" left="50%" zIndex="300" center>
                 <div ref={(el) => (contentEl = el)} >
                     {props.children}

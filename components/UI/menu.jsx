@@ -9,7 +9,7 @@ const StyledMenu = styled.nav`
   justify-content: flex-start;
   background: ${({ theme }) => theme.colors.secondary};
   min-height: 100vh;
-  text-align: left;
+  text-align: center;
   padding: 2rem 4rem;
   padding-top: 10rem;
   position: fixed;
@@ -49,7 +49,7 @@ const StyledMenu = styled.nav`
     margin-top:2rem;
     font-family: ${({ theme }) => theme.fonts.paragraph};
     font-size: 2rem;
-    
+    text-align: center;
     a {
       font-size: 2rem;
       display: block;
@@ -62,19 +62,19 @@ const Menu = ({ open }) => {
     <StyledMenu open={open}>
       <HomeButton />
       <ProfileImage />
-      <Link href="/created">
+      <Link href="/create">
         <a>
           <span role="img" aria-label="Things built">&#127959;</span>
           Things built
         </a>
       </Link>
-      <Link href="/created">
+      <Link href="/solve">
         <a>
           <span role="img" aria-label="Problems solved">&#x2699;</span>
           Problems solved
         </a>
       </Link>
-      <Link href="/created">
+      <Link href="/coach">
         <a>
           <span role="img" aria-label="People coached">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
           People coached

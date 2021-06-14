@@ -3,7 +3,6 @@ import { PrismicClient } from '../../lib/prismic';
 import Prismic from "prismic-javascript"
 import CanvasPage from '../../components/layouts/canvaspage';
 import styled from 'styled-components';
-import Chip from '../../components/UI/chip';
 import SliceRenderer from '../../components/slices/SliceRenderer';
 import { RichText } from "prismic-reactjs"
 
@@ -40,13 +39,10 @@ const Flex = styled.div`
 
 const CreatePage = ({ data }) => {
 
-    console.log('Canvas Page');
-    console.log(data)
-
     return (
 
         <CanvasPage
-            type="create"
+            type="build"
             pagetitle={data.title[0].text}
             pagedesc={data.short_desc[0].text}
         >

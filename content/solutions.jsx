@@ -28,8 +28,10 @@ const Solutions = (props) => {
   }    
 
     let solutions = renderCards();
+
+    if (props.listing) return solutions
   
-    return (
+    else return (
         <CardCarousel>
             { solutions }
         </CardCarousel>

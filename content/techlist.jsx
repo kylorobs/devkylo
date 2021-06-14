@@ -23,7 +23,7 @@ const TechList = ({ list, limit, small }) => {
     if (list && list.length > 0){
         chips = list.map((chip, i)=> {
             if (limit && i >= +limit) return
-            else return <Chip small={small}>{chip}</Chip>
+            else return <Chip key={i+'chip'} small={small}>{chip}</Chip>
         })
     }
     return (

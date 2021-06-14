@@ -40,9 +40,6 @@ const Flex = styled.div`
 
 const SolvePage = ({ data }) => {
 
-    console.log('Canvas Page');
-    console.log(data.slices)
-
     const createTechList = (ar) => {
         return ar.map(node => node.text);
     }
