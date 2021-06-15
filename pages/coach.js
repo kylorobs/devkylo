@@ -3,6 +3,7 @@ import Students from '../content/students';
 import { PrismicClient } from "../lib/prismic";
 import Prismic from "prismic-javascript";
 import styled from "styled-components";
+import ButtonLink from "../components/UI/button_link";
 
 const Flex = styled.div`
     display: flex;
@@ -23,6 +24,7 @@ export default function Coach(props){
             pagedesc="Kylo Robinson's portfolio of projects created as a javascript developer."
         >
             <p>Kylo Robinson's portfolio of projects created as a javascript developer.</p>
+      
            <Flex>
                 <Students listing students={props.students.results}/>
            </Flex>

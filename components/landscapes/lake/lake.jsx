@@ -48,7 +48,7 @@ const MagicalLake = props => {
     return (
         <FullScreen color="#3b516e">
 
-            <Layer width="100%" top="50%" left="50%"  zIndex="300" center>
+            <Layer width="100%" top="50%" left="50%" containscarousel  zIndex="300" center>
                 <div ref={(el) => (contentEl = el)}>
                     {props.children}
                 </div>

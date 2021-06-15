@@ -19,6 +19,10 @@ export const Layer = styled.div`
     right: ${props => props.right || ''};
     z-index: ${props => props.zIndex || ''};
     transform: ${props => !props.center ? '' : 'translate(-50%, -50%)'};
+
+    @media (max-width: 600px){
+        top: ${props => props.containscarousel? '35%' : props.top || ''};
+    }
 `
 
 export const SVGBase = styled.div`

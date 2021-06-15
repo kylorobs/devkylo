@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+
 const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,6 +27,7 @@ const responsive = {
 
 const Container = styled.div`
     width: 90%;
+    display: relative;
     margin: auto;
     button {
       background-color: ${props => props.theme.colors.primary};
