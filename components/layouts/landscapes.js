@@ -12,6 +12,7 @@ export const FullScreen = styled.section`
 export const Layer = styled.div`
     position: absolute;
     max-height: 100%;
+    opacity: ${props => props.hiddenOnLoad? '0' : '1'};
     width: ${props => props.width || '100%'};
     bottom: ${props => props.bottom || ''};
     top: ${props => props.top || ''};

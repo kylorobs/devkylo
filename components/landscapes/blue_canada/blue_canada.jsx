@@ -18,7 +18,8 @@ const BlueCanada = props => {
     useEffect(() => {
         const tl = gsap.timeline({delay: 1});
         tl.set(contentEl, {opacity: 0})
-        tl.add(fadeIn(foregroundEl));
+        tl.set(foregroundEl, {opacity: 0})
+        tl.add(fadeInTo(foregroundEl));
         tl.add(scaleIn(foregroundEl),'-=1');
         tl.add(fadeIn(moonEl),'-=1');
         tl.add(slideUp(moonEl),'-=1');
@@ -41,9 +42,9 @@ const BlueCanada = props => {
                 <Layer zIndex="-20" top="60%" left="50%" center width="90%" ref={(el) => (moonEl = el)}>
                     <Image src="/moon.png" alt="Vercel Logo" width="977" height="982" layout="responsive" />
                 </Layer>
-                <div ref={(el) => (foregroundEl = el)}>
+                <HiddenOnLoad ref={(el) => (foregroundEl = el)}>
                     <Blue />
-                </div>
+                </HiddenOnLoad>
             </SVGBase>
         </FullScreen>
     )
