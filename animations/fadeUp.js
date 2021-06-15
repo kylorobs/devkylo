@@ -11,6 +11,17 @@ export const fadeIn = (el, delay = 0) => {
     return tl;
 }
 
+export const fadeInTo = (el, delay = 0) => {
+    const tl = gsap.timeline();
+    tl.set(el, { opacity: 0 })
+    tl.to(el, {
+        opacity: 1,
+        duration: 1,
+        delay
+    });
+    return tl;
+}
+
 export const scaleIn = (el, delay = 0) => {
     const tl = gsap.timeline();
     tl.from(el, {

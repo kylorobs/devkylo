@@ -32,3 +32,6 @@ export const SVGBase = styled.div`
     z-index: 10;
     background-color: ${props => props.bg};
 `
+export const HiddenOnLoad = styled.div`
+    opacity: 0;
+`

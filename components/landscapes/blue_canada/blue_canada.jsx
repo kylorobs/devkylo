@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 // import gsap from "gsap";
-import { fadeUp, slideUp, scaleIn, fadeIn } from '../../../animations/fadeUp';
+import { fadeUp, slideUp, scaleIn, fadeIn, fadeInTo } from '../../../animations/fadeUp';
 import Blue from '../../../assets/blue.svg';
 import Image from 'next/image';
-import { FullScreen, Layer, SVGBase} from '../../layouts/landscapes';
+import { FullScreen, Layer, SVGBase, HiddenOnLoad} from '../../layouts/landscapes';
 import gsap from 'gsap';
+
 
 
 const BlueCanada = props => {
@@ -16,21 +17,22 @@ const BlueCanada = props => {
 
     useEffect(() => {
         const tl = gsap.timeline({delay: 1});
+        tl.set(contentEl, {opacity: 0})
         tl.add(fadeIn(foregroundEl));
         tl.add(scaleIn(foregroundEl),'-=1');
         tl.add(fadeIn(moonEl),'-=1');
         tl.add(slideUp(moonEl),'-=1');
         tl.add(fadeUp(mountainsEl, 2), '-=3');
-        tl.add(fadeIn(contentEl), '-=0.4');
+        tl.add(fadeInTo(contentEl), '-=0.4');
 
     }, [])
 
     return (
         <FullScreen color="#86bbe6">
             <Layer width="auto" top="50%" left="50%" zIndex="100" center>
-                <div ref={(el) => (contentEl = el)}>
+                <HiddenOnLoad ref={(el) => (contentEl = el)}>
                     {props.children}
-                </div>
+                </HiddenOnLoad>
             </Layer>
             <SVGBase bg="#60d8a2">
                 <Layer bottom="0" zIndex="-10"  ref={(el) => (mountainsEl = el)}>
