@@ -18,8 +18,7 @@ const Ocean = styled.div`
 const Sky = styled.div`
     width: 100%;
     height: 100vh;
-    // background-color: blue;
-    background-image: linear-gradient(blue, #1f202b);
+    background-image: linear-gradient(#bcd9cc, #1f202b);
 `
 
 
@@ -60,18 +59,18 @@ const MagicalLake = props => {
                 <Image src="/lakecloud.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
             </Layer> */}
             <Layer  ref={(el) => (yachtEl = el)} width="8%" zIndex="400" left="50%" center bottom="10%">
-                <Image src="/floatyacht.png" alt="Vercel Logo" width="86" height="152" layout="responsive" />
+                {/* <Image src="/floatyacht.png" alt="Vercel Logo" width="86" height="152" layout="responsive" /> */}
             </Layer>
-            <Layer ref={(el) => (mountainsEl = el)}  width="90%" zIndex="-10" left="50%" center bottom="23%">
+            <Layer ref={(el) => (mountainsEl = el)}  width="90%" zIndex="-10" left="50%" center bottom="20%">
                 <Mountains />
             </Layer>
             <Layer width="30%" zIndex="200" left="60%" center bottom="0%" ref={(el) => (ripplesEl = el)}>
                 <Image src="/ripples.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
             </Layer>
-            <Layer width="100%" bottom="5%" zIndex="-10">
+            <Layer width="100%" bottom="0" zIndex="-10">
                 <Ocean />
             </Layer>
-            <div ref={(el) => (plantsEl = el)}>
+            <div  ref={(el) => (plantsEl = el)}>
                 <Lake/>
             </div>
 
