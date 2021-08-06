@@ -7,7 +7,7 @@ import SliceRenderer from '../../components/slices/SliceRenderer';
 // import { RichText } from "prismic-reactjs"
 import TechList from '../../content/techlist';
 import TextArea from '../../components/UI/textarea';
-import styled from 'styled-components';
+
 
 const Flex = styled.div`
     width: 100%;

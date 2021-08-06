@@ -2,7 +2,6 @@ import React from 'react';
 import { PrismicClient } from '../../lib/prismic';
 import Prismic from "prismic-javascript"
 import CanvasPage from '../../components/layouts/canvaspage';
-import styled from 'styled-components';
 import SliceRenderer from '../../components/slices/SliceRenderer';
 import { RichText } from "prismic-reactjs"
 import TextArea from '../../components/UI/textarea';
