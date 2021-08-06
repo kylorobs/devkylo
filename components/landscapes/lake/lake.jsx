@@ -18,7 +18,8 @@ const Ocean = styled.div`
 const Sky = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: blue;
+    // background-color: blue;
+    background-image: linear-gradient(blue, #1f202b);
 `
 
 
@@ -55,9 +56,9 @@ const MagicalLake = props => {
             </Layer>
         
         <SVGBase bg="#9bb1ff">
-            <Layer width="100%" zIndex="-10" left="0%" top="0%">
+            {/* <Layer width="100%" zIndex="-10" left="0%" top="0%">
                 <Image src="/lakecloud.png" alt="Vercel Logo" width="800" height="383" layout="responsive" />
-            </Layer>
+            </Layer> */}
             <Layer  ref={(el) => (yachtEl = el)} width="8%" zIndex="400" left="50%" center bottom="10%">
                 <Image src="/floatyacht.png" alt="Vercel Logo" width="86" height="152" layout="responsive" />
             </Layer>

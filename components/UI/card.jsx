@@ -4,9 +4,7 @@ import TechList from '../../content/techlist';
 import Link from 'next/link';
 
 const Paper = styled.div`
-    height: 60%;
-    min-height: 35rem;
-    max-height: 35rem;
+    height: 35rem;
     width: auto;
     min-width: 20rem;
     margin: 1.5rem auto;
@@ -34,6 +32,17 @@ const Paper = styled.div`
         min-height: 35rem;
 
     }
+`
+
+const PaperText = styled.div`
+
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+
 `
 
 const Title = styled.span`
@@ -92,11 +101,13 @@ const Card = props => {
             <Link href={props.link || '/'} as={`/${props.link}` || '/'}>
                 <ALink>
                     <Paper>
-                        <ProbSol_Heading>Problem</ProbSol_Heading>
-                        <ProbSol_Text>{props.problem}</ProbSol_Text>
-                        <ProbSol_Heading>Solution</ProbSol_Heading>
-                        <ProbSol_Text>{props.solution}</ProbSol_Text>
-                        <TechList limit={4} small list={props.chips} />
+                        <PaperText>
+                            <ProbSol_Heading>Problem</ProbSol_Heading>
+                            <ProbSol_Text>{props.problem}</ProbSol_Text>
+                            <ProbSol_Heading>Solution</ProbSol_Heading>
+                            <ProbSol_Text>{props.solution}</ProbSol_Text>
+                        </PaperText>
+                            <TechList limit={4} small list={props.chips} />
                     </Paper>
                 </ALink>
             </Link>
@@ -107,8 +118,10 @@ const Card = props => {
         <Link href={props.link || '/'} as={`/${props.link}` || '/'}>
             <ALink>
                 <Paper>
-                    <Title>{props.title}</Title>
-                    <Desc>{props.desc}</Desc>
+                    <PaperText>
+                        <Title>{props.title}</Title>
+                        <Desc>{props.desc}</Desc>
+                    </PaperText>
                     <TechList small limit={5} list={props.chips} />
                 </Paper>
             </ALink>

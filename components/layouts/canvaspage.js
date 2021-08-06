@@ -5,7 +5,7 @@ import FullPage from './fullpage';
 const Bg = styled.div`
     width: 100%;
     min-height: 100vh;
-    background-image: ${({ type }) => type === 'build' ? "url('../fullblue.jpg')" : type === 'solve' ? "url('../fullLake.jpg')" : "url('../fullLake.jpg')"};
+    background-image: url('../fullblue.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -21,7 +21,7 @@ const Type = styled.div`
     -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
-    background-image: ${({ type }) => type === 'build' ? "url('../fullblue.jpg')" : type === 'solve' ? "url('../fullLake.jpg')" : "url('../fullLake.jpg')"};
+    background-image: url('../fullblue.jpg');
     background-color: black;
     @media (min-width: 600px){
         font-size: 8rem;

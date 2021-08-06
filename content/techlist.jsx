@@ -9,7 +9,7 @@ const Flex = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     padding: 2rem 0;
-    // background: #ffffffbf;
+    background: #70ffbf;
     overflow: hidden;
 
     @media (min-width: 600px){

@@ -4,6 +4,7 @@ import { PrismicClient } from "../lib/prismic";
 import Prismic from "prismic-javascript";
 import styled from "styled-components";
 import ButtonLink from "../components/UI/button_link";
+import TextArea from "../components/UI/textarea";
 
 const Flex = styled.div`
     display: flex;
@@ -21,9 +22,14 @@ export default function Coach(props){
         <CanvasPage
             type="coach"
             pagetitle="People Coached"
-            pagedesc="Kylo Robinson's portfolio of projects created as a javascript developer."
+            pagedesc="Kyle Robinson's portfolio of projects created as a javascript developer."
         >
-            <p>Kylo Robinson's portfolio of projects created as a javascript developer.</p>
+
+          <TextArea>
+            <p>There are many reasons why I love my profession. Besides working in teams and building exciting tech products and features, I also find joy in helping others learn and grow. In my free time I volunteer coach at <a href="https://codebar.io/">codebar.io</a>, and I also run my own javascript teaching program at <a href="https://thegreatsync.com/">thegreatsync.com.</a></p>
+            <p> I have also mentored and coached over 25 staff members in my current role, and lead the website training & development propgram.</p>
+        
+          </TextArea>
       
            <Flex>
                 <Students listing students={props.students.results}/>

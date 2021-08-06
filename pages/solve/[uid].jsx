@@ -6,24 +6,8 @@ import styled from 'styled-components';
 import SliceRenderer from '../../components/slices/SliceRenderer';
 // import { RichText } from "prismic-reactjs"
 import TechList from '../../content/techlist';
-
-const Text = styled.div`
-    margin: 1rem;
-    @media(min-width: 600px){
-        margin: 4rem;
-    }
-
-    h2 {
-        margin-top: 4rem;
-    }
-
-    p {
-        font-family: ${props => props.theme.fonts.paragraph};
-        font-size: 2.2rem;
-        margin: 2rem 0;
-        line-height: 32px;
-    }
-`
+import TextArea from '../../components/UI/textarea';
+import styled from 'styled-components';
 
 const Flex = styled.div`
     width: 100%;
@@ -52,14 +36,14 @@ const SolvePage = ({ data }) => {
             pagedesc={data.problem[0].text}
         >
             
-            <Text>
+            <TextArea>
                 <TechList list={createTechList(data.technology)}/>
                 <h2>Problem</h2>
                 <p>{data.problem[0].text}</p>
                 <h2>Solution</h2>
                 <p>{data.solution[0].text}</p>
                 <SliceRenderer slices={data.body} />
-            </Text>
+            </TextArea>
     
         </CanvasPage>
     );
