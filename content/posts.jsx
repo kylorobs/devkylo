@@ -12,7 +12,8 @@ const Parent1 = styled.div`
 const Absolute1= styled.div`
   position: absolute;
   bottom: -8%;
-  right: 8%;
+  right: 50%;
+  transform: translate(50%, 0);
 `
 
 const Posts = (props) => {

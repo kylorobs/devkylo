@@ -6,8 +6,9 @@ const StyledButton = styled.button `
     font-size: 14px;
     background: white;
     text-align: center;
+    color: ${props => props.theme.colors.pink};
     font-family: ${props => props.theme.fonts.primary};
-    border: 2px solid ${props => props.theme.colors.primary};
+    border: 2px solid ${props => props.theme.colors.pink};
     &:hover {
          cursor: pointer;
          background: ${props => props.theme.colors.primary};

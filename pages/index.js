@@ -17,6 +17,7 @@ const Heading=styled.h1`
   margin: 0;
   padding:0;
   margin-bottom: 8rem;
+
   
 
   @media (min-width: 350px){
@@ -45,8 +46,6 @@ const HeaddingInner=styled.span`
 
 export default function Home(props) {
 
-  // console.log('HOME Props');
-  // console.log(props)
 
   return (
     <FullPage 
@@ -55,7 +54,7 @@ export default function Home(props) {
         
         <BlueCanada>
           <Heading>
-            DEV KYLO <HeaddingInner align="left">Kyle Robinson -  </HeaddingInner><HeaddingInner align="right">Fullstack Javascript Developer</HeaddingInner>
+            DEV KYLO <HeaddingInner align="left">Kyle Robinson -  </HeaddingInner><HeaddingInner align="right">Senior Javascript / React</HeaddingInner>
           </Heading>
 
         </BlueCanada>
@@ -64,13 +63,13 @@ export default function Home(props) {
         <MagicalLake>
             <Posts posts={props.posts.results}/>
         </MagicalLake>
-        <SectionHeading heading="I.SOLVE()" right>
-          <p>I work across mulltiple teams, finding and executing solutions to problems on my own.</p>
+        <SectionHeading heading="SOLVE" right>
+          <p>I work across multiple teams, finding and executing solutions to problems on my own.</p>
         </SectionHeading>
         <RicketyBridge>
           <Solutions solutions={props.solutions.results} />
         </RicketyBridge>
-        <SectionHeading heading="I.COACH()" >
+        <SectionHeading heading="COACH" >
           <p>I love to coach and upskill others. I even built my own javascript teaching system.</p>
         </SectionHeading>
         <Students students={props.students.results}/>

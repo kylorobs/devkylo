@@ -38,31 +38,28 @@ const iCreate = () => {
                 repeat: 1,
             }
         })
-        // gsap.to(chips, {
-        //     delay: 1,
-        //     background: 'black',
-        // })
     }, [])
 
     return (
-        <SectionHeading heading="I.BUILD()">
+        <SectionHeading heading="BUILD">
            
-                <p>I have been buiding javascript applications for many years. I am a creator, a team-worker and a leader. I know how to get the job done.</p>
+                <p>I have been buiding javascript applications for many years. I am a team-worker, problem-solver and a leader. I know how to get the job done.</p>
                 <Flex ref={(el) => (chipsEl = el)}>
-                    <Chip>Javascript </Chip>
+                    <Chip>Javascript</Chip>
                     <Chip> React Js</Chip>
-                    <Chip> Node Js </Chip>
                     <Chip> Typescript </Chip>
-                    <Chip> Express Js </Chip>
-                    <Chip> Firebase </Chip>
                     <Chip> Redux </Chip>
+                    <Chip> Node Js </Chip>
+                    <Chip> Express Js </Chip>
                     <Chip> SQL </Chip>
+                    <Chip> Firebase </Chip>
                     <Chip> Web Components </Chip>
-                    <Chip> SCSS </Chip>
+                    <Chip> Git </Chip>
                     <Chip> Gatsby Js </Chip>
                     <Chip> Next Js </Chip>
-                    <Chip> Mocha </Chip>
-                    <Chip> Jasmine </Chip>
+                    <Chip> Jest </Chip>
+                    <Chip> Cypress </Chip>
+                    <Chip> Jira </Chip>
                 </Flex>
     
         </SectionHeading>

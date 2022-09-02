@@ -8,7 +8,7 @@ const Paper = styled.div`
     width: auto;
     min-width: 20rem;
     margin: 1.5rem auto;
-    box-shadow: 6px 5px 5px 2px rgb(0 0 0 / 45%);
+    box-shadow: 1px 3px 5px 2px rgb(0 0 0 / 45%);
     background: #ffffffcf;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ const Paper = styled.div`
     transition: box-shadow 0.3s ease-in;
 
     &:hover {
-        box-shadow: 6px 5px 5px 2px rgb(112 255 191);
+        box-shadow: 1px 3px 5px 2px #fc7185;
     }
 
     @media (min-width: 600px){

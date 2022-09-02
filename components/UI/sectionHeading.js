@@ -78,7 +78,7 @@ const SectionHeading = props => {
     return (
         <StyledSection {...props}>
             <AnimateIn>
-                <h2>{props.heading}</h2>
+                <h2>I<span style={{color: '#fb7185'}}>.</span>{props.heading}<span style={{color: '#fb7185'}}>()</span></h2>
             </AnimateIn>
             <AnimateIn>
                 <Flex {...props}>

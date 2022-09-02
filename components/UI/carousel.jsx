@@ -30,11 +30,11 @@ const Container = styled.div`
     display: relative;
     margin: auto;
     button {
-      background-color: ${props => props.theme.colors.primary};
-      color: black;
+      background-color: ${props => props.theme.colors.pink};
+      color: white;
       margin: -2rem;
       &::before {
-        color: black;
+        color: white;
       }
 
       @media(min-width: 600px){
@@ -73,7 +73,8 @@ render(){
               ssr={true}
               deviceType={this.props.deviceType}
           >
-            {this.props.children}
+            {this.props.children} 
+       
           </Carousel>
         </Container>
        

@@ -4,8 +4,6 @@ import { Slice_Text, Slice_Embed, Slice_Image, Slice_Card, Slice_ImageSeries } f
 
 
 const SliceRenderer = ({ slices }) => {
-    console.log('SLICES')
-    console.log(slices)
     if (slices) {
         return slices.map((slice, index) => {
             const res = (() => {
